@@ -1,0 +1,14 @@
+# auto generated
+build*
+
+# vscode
+.vscode
+
+# qt creator
+CMakeLists.txt.user
+
+# vs + wsl
+.vs
+out
+CMakePresets.json
+CMakeSettings.json
