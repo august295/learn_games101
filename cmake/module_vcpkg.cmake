@@ -34,14 +34,14 @@ endif()
 ################################################################################
 find_package(Eigen3 REQUIRED CONFIG)
 if(Eigen3_FOUND)
-    include_directories(${Eigen3_INCLUDE_DIRS})
+    include_directories(${Eigen3_INCLUDE_DIRS}/../)
 else()
     message(FATAL_ERROR "Eigen3 not found. Please install via: vcpkg install eigen3:${VCPKG_TARGET_TRIPLET}")
 endif()
 
 ################################################################################
 # OpenCV
-#   vcpkg install opencv[contrib]:x64-windows-static
+#   vcpkg install opencv:x64-windows-static
 ################################################################################
 find_package(OpenCV CONFIG REQUIRED)
 if(OpenCV_FOUND)

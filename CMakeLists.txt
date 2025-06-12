@@ -6,7 +6,7 @@ set(UseProjectName "learn_games101")
 project(${UseProjectName})
 
 # C++标准
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 # 条件编译
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")

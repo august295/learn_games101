@@ -8,7 +8,7 @@
 #define DEG2RAD(val) (val / RAD)              /* 角度转弧度 */
 #define RAD2DEG(val) (val * RAD)              /* 弧度转角度 */
 
-void homework1()
+void homework0()
 {
     Eigen::Vector3f v(2.0f, 1.0f, 1.0f);
     float           angle = 45.0f;
@@ -72,7 +72,7 @@ int main()
     std::cout << i * v << std::endl;
 
     // homework
-    homework1();
+    homework0();
 
     return 0;
 }
