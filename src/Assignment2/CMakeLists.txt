@@ -1,6 +1,6 @@
-set(ProjectName "Assignment1")
+set(ProjectName "Assignment2")
 
-add_executable(${ProjectName} main.cpp rasterizer.hpp rasterizer.cpp Triangle.hpp Triangle.cpp)
+add_executable(${ProjectName} main.cpp rasterizer.hpp rasterizer.cpp global.hpp Triangle.hpp Triangle.cpp)
 target_link_libraries(${ProjectName} ${OpenCV_LIBRARIES})
 
 # cmake3.15
