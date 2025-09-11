@@ -74,9 +74,6 @@ public:
         // 垂直插值（V方向）
         cv::Vec3f color = colorDown + vLerp * (colorUp - colorDown);
 
-        auto u_img = u * width;
-        auto v_img = (1 - v) * height;
-        auto color = image_data.at<cv::Vec3b>(v_img, u_img);
         return Eigen::Vector3f(color[0], color[1], color[2]);
     }
 };
