@@ -1,8 +1,8 @@
-set(ProjectName "Assignment3")
+set(ProjectName "Assignment6")
 
-add_executable(${ProjectName} main.cpp rasterizer.hpp rasterizer.cpp global.hpp Triangle.hpp Triangle.cpp Texture.hpp Texture.cpp Shader.hpp OBJ_Loader.h)
-target_link_libraries(${ProjectName} ${OpenCV_LIBRARIES})
-#target_compile_options(Rasterizer PUBLIC -Wall -Wextra -pedantic)
+add_executable(${ProjectName} main.cpp Object.hpp Vector.cpp Vector.hpp Sphere.hpp global.hpp Triangle.hpp Scene.cpp
+    Scene.hpp Light.hpp AreaLight.hpp BVH.cpp BVH.hpp Bounds3.hpp Ray.hpp Material.hpp Intersection.hpp
+    Renderer.cpp Renderer.hpp)
 
 # cmake3.15
 set_target_properties(${ProjectName} PROPERTIES
@@ -10,7 +10,7 @@ set_target_properties(${ProjectName} PROPERTIES
     VS_DEBUGGER_WORKING_DIRECTORY "$(OutDir)"
     MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
-# 拷贝资源文件
+    # 拷贝资源文件
 add_custom_target(
     "${ProjectName}CopyTask" ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/models" "${BUILD_DIR}/bin/${ProjectName}/models"
