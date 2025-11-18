@@ -1,7 +1,7 @@
 set(ProjectName "Assignment3")
 
 add_executable(${ProjectName} main.cpp rasterizer.hpp rasterizer.cpp global.hpp Triangle.hpp Triangle.cpp Texture.hpp Texture.cpp Shader.hpp OBJ_Loader.h)
-target_link_libraries(${ProjectName} ${OpenCV_LIBRARIES})
+target_link_libraries(${ProjectName} ${OpenCV_LIBS})
 #target_compile_options(Rasterizer PUBLIC -Wall -Wextra -pedantic)
 
 # cmake3.15

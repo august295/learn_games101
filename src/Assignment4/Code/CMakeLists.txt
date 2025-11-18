@@ -1,7 +1,7 @@
 set(ProjectName "Assignment4")
 
 add_executable(${ProjectName} main.cpp)
-target_link_libraries(${ProjectName} ${OpenCV_LIBRARIES})
+target_link_libraries(${ProjectName} ${OpenCV_LIBS})
 
 # cmake3.15
 set_target_properties(${ProjectName} PROPERTIES

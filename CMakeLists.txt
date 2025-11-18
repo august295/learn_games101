@@ -1,6 +1,10 @@
 ﻿# 要求最低Cmake版本
 cmake_minimum_required(VERSION 3.15.0)
 
+# CMAKE_TOOLCHAIN_FILE 需在 project 之前设置
+# find_package 需在 project 之后使用
+include(cmake/module_vcpkg.cmake)
+
 # 项目名称
 set(UseProjectName "learn_games101")
 project(${UseProjectName})
@@ -48,7 +52,9 @@ if(POLICY CMP0077)
     cmake_policy(SET CMP0077 NEW)
 endif()
 
+# 三方库
+VCPKG_LOAD_3RDPARTY()
+
 # 指定生成目标
-include(${ROOT_DIR}/cmake/module_vcpkg.cmake)
 include(${ROOT_DIR}/cmake/module.cmake)
 add_subdirectory(src)
