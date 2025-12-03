@@ -38,11 +38,13 @@ void Renderer::Render(const Scene& scene)
             float y = (1 - 2 * (j + 0.5) / (float)scene.height) * scale;
 
             Vector3f dir = normalize(Vector3f(-x, y, 1));
-            for (int k = 0; k < spp; k++)
-            {
-                // framebuffer[m] += scene.castRay(Ray(eye_pos, dir), 0) / spp;
-                results.push_back(pool.enqueue([=, &framebuffer, &scene] { framebuffer[m] += scene.castRay(Ray(eye_pos, dir), 0) / spp; }));
-            }
+            results.push_back(pool.enqueue(
+                [=, &framebuffer, &scene]() {
+                    for (int k = 0; k < spp; k++)
+                    {
+                        framebuffer[m] += scene.castRay(Ray(eye_pos, dir), 0) / spp;
+                    }
+                }));
             m++;
         }
         UpdateProgress(j / (float)scene.height);
